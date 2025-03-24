@@ -39,20 +39,25 @@ class House:
 class Apartment(House):
 
     def __init__(self, house_number, street, area, no_of_beds, price):
-        super().__init__(street, area, price)
+        super().__init__(house_number, street, area, no_of_beds, price)
 
         self.floors = street
         self.garden = area
         self.driveway = price
 
-    def extra_details(self):
+    def apartment_Info(self):
         self.house_Info()
 
-        print("Extra Details")
+        print("Apartment Info")
         print("The Street is", self.street)
         print("The Area is", self.area)
-        print("The Rent is ", self.price)
+        print("The Rent is ", self.price, "per Month")
+
+    
 
 
-h1 = House(22,'main street','Rathcoole',3,400000)
-h1.house_Info()    
+h1 = House(22,'main street','Downtown',4,400000)
+a1 = Apartment(423, 'Smith street', 'uptown', 2, 2500)
+
+h1.house_Info() 
+a1.apartment_Info()
